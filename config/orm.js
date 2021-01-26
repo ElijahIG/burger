@@ -1,24 +1,42 @@
-const connection = require("./connection.js");
+const connection = require("./connection");
 
 const orm = {
-    selectWhere: (tableInput, colToSearch, valOfCol) => {
-      const queryString = "SELECT * FROM ?? WHERE ?? = ?";
-      const values = [tableInput, colToSearch, valOfCol];
-  
-      connection.query(queryString, values, (err, result) => {
-        if (err) {
-          throw err;
-        }
-        console.log(result);
-      });
+    selectAll: function (tableName) {
+        const query = "SELECT * FROM ??";
+        return new Promise((resolve, reject) => {
+            connection.query(query, [tableName], (err, results) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(results);
+                }
+            });
+        });
     },
-
-selectAll ()
-
-insertOne ()
-
-updateOne ()
-
+    insertOne: function (tableName, obj) {
+        const query = `INSERT INTO BURGERS SET ?`;
+        return new Promise((resolve, reject) => {
+            connection.query(query, obj, (err, results) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(results);
+                }
+            });
+        });
+    },
+    updateOne: function (tableName, updCol, updVal, idCol, objId) {
+        const query = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+        return new Promise((resolve, reject) => {
+            connection.query(query, [tableName, updCol, updVal, idCol, objId], (err, results) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(results);
+                }
+            });
+        });
+    }
 };
 
 module.exports = orm;
