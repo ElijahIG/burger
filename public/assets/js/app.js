@@ -36,7 +36,4 @@ const app = {
         this.bindUIActions();
     }
 };
-
-$(document).ready(function() {
-   app.init();
-});
+app.init();
