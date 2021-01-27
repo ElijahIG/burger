@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Add Routes
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 app.use('/', require('./controllers/burgersController'));
 
 // Set up handlebars view engine
