@@ -20,4 +20,4 @@ Makes issues on the git repo
 * Github :ElijahIG
 * E-mail :elijahgdavis1999@gmail.com
 
-![Weather-Dashboard](images/Capture.PNG)
+![Weather-Dashboard](/public/assets/images/Capture.PNG)
