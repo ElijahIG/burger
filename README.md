@@ -19,5 +19,8 @@ Makes issues on the git repo
 # Contact
 * Github :ElijahIG
 * E-mail :elijahgdavis1999@gmail.com
+<<<<<<< HEAD
 
 ![Burger App](public/assets/images/Capture.PNG)
+=======
+>>>>>>> f95745f38d7c70909254c6fb81c55a7f7e5440ab
